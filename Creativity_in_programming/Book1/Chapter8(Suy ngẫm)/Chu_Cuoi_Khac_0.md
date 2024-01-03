@@ -17,7 +17,7 @@
 
 **Bài T1**. Cho biết N! tận cùng với bao nhiêu chữ số 0. Ví dụ, 15! tận cùng với 3 chữ số 0, vì 15! = 130764368000.
 
-*Gợi ý:* Nếu *p* là một số nguyên tố *$p^{K}$* là nhân tử trong dạng phân tích N! ra thừa số nguyên tố thì *k* được tính bằng tổng của các thương nguyên trong phép chia liên tiếp của *N* cho *p*.
+*Gợi ý:* Nếu *p* là một số nguyên tố $p^{K}$ là nhân tử trong dạng phân tích N! ra thừa số nguyên tố thì *k* được tính bằng tổng của các thương nguyên trong phép chia liên tiếp của *N* cho *p*.
 
 *Ví dụ:* 
 
