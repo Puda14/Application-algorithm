@@ -342,6 +342,7 @@ freopen("file.OUT", "w", stdout);
 ![PNG Image](image/pointer.png)
 
 Ứng dụng 
+
 ![PNG Image](image/LList.png)
 
 
@@ -385,6 +386,291 @@ Một số hàm thuật toán
 # Data structure
 ![PNG Image](image/DataStruct.png)
 
+## Array
+![PNG Image](image/Arrays-in-C.png)
+
+- Một Mảng là một bộ sưu tập dữ liệu cùng kiểu dữ liệu, được lưu trữ tại một vị trí liên tục trong bộ nhớ.
+
+- Chỉ mục của một mảng bắt đầu từ 0. Điều này có nghĩa là phần tử đầu tiên được lưu trữ tại chỉ mục 0, phần tử thứ hai tại chỉ mục 1, và cứ tiếp tục như vậy.
+
+- Các phần tử của mảng có thể được truy cập bằng cách sử dụng chỉ mục của chúng.
+
+- Một khi một mảng được khai báo, kích thước của nó duy trì không đổi suốt chương trình.
+
+- Một mảng có thể có nhiều chiều.
+
+- Số lượng phần tử trong một mảng có thể được xác định bằng toán tử sizeof.
+
+- Chúng ta có thể tìm kích thước của loại các phần tử được lưu trữ trong mảng bằng cách trừ địa chỉ liền kề.
+
+`data_type array_name[Size_of_array];`
+
+Ví dụ:
+
+```cpp
+int array[101];
+int a[3][3];
+```
+![PNG Image](image/two-d.png)
+
+## Vector
+Vector là một loại dữ liệu tương tự như mảng động, có khả năng tự điều chỉnh kích thước của mình tự động khi một phần tử được thêm vào hoặc xóa bỏ.
+
+Ví dụ:
+
+```cpp
+vector<int> g1;
+vector<int> myvector{ 1, 2, 3, 4, 5 };
+vector<int> v1(101);
+vector<vector<int>> v2;
+```
+
+![PNG Image](image/vector.png)
+## Map
+
+![PNG Image](image/red-black-tree.png)
+
+Ví dụ:
+```cpp
+// C++ program to illustrate the begin and end iterator
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+ 
+int main()
+{
+    // Create a map of strings to integers
+    map<string, int> mp;
+ 
+    // Insert some values into the map
+    mp["one"] = 1;
+    mp["two"] = 2;
+    mp["three"] = 3;
+ 
+    // Get an iterator pointing to the first element in the
+    // map
+    map<string, int>::iterator it = mp.begin();
+ 
+    // Iterate through the map and print the elements
+    while (it != mp.end()) {
+        cout << "Key: " << it->first
+             << ", Value: " << it->second << endl;
+        ++it;
+    }
+ 
+    return 0;
+}
+```
+## Set
+
+Set trong C++ được cài đặt như là một `Self-Balancing Binary Search Tree`
+
+Ví dụ:
+
+```cpp
+// C++ Program to Demonstrate
+// the basic working of STL
+#include <iostream>
+#include <set>
+ 
+int main()
+{
+    std::set<char> a;
+    a.insert('G');
+    a.insert('F');
+    a.insert('G');
+    for (auto& str : a) {
+        std::cout << str << ' ';
+    }
+    std::cout << '\n';
+    return 0;
+}
+```
+
+## Stack
+
+![PNG Image](image/stack.webp)
+
+Ví dụ:
+
+```cpp
+#include <iostream> 
+#include <stack>
+using namespace std;
+int main() {
+    stack<int> stack;
+    stack.push(21);// The values pushed in the stack should be of the same data which is written during declaration of stack
+    stack.push(22);
+    stack.push(24);
+    stack.push(25);
+    int num=0;
+    stack.push(num);
+    stack.pop();
+    stack.pop();
+    stack.pop();
+   
+    while (!stack.empty()) {
+        cout << stack.top() <<" ";
+        stack.pop();
+    }
+}
+```
+
+## Queue
+
+![PNG Image](image/fifo-property-in-Queue.png)
+
+Ví dụ:
+```cpp
+// CPP code to illustrate Queue in 
+// Standard Template Library (STL)
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+// Print the queue
+void showq(queue<int> gq)
+{
+	queue<int> g = gq;
+	while (!g.empty()) {
+		cout << '\t' << g.front();
+		g.pop();
+	}
+	cout << '\n';
+}
+
+// Driver Code
+int main()
+{
+	queue<int> gquiz;
+	gquiz.push(10);
+	gquiz.push(20);
+	gquiz.push(30);
+
+	cout << "The queue gquiz is : ";
+	showq(gquiz);
+
+	cout << "\ngquiz.size() : " << gquiz.size();
+	cout << "\ngquiz.front() : " << gquiz.front();
+	cout << "\ngquiz.back() : " << gquiz.back();
+
+	cout << "\ngquiz.pop() : ";
+	gquiz.pop();
+	showq(gquiz);
+
+	return 0;
+}
+
+```
+
+## Pair
+
+Struct
+
+![PNG Image](image/struct.webp)
+
+Pair
+
+Ví dụ:
+
+```cpp
+
+
+// CPP program to illustrate 
+// auto-initializing of pair STL
+#include <iostream>
+#include <utility>
+ 
+using namespace std;
+ 
+int main()
+{
+    pair<int, double> PAIR1;
+    pair<string, char> PAIR2;
+ 
+    // it is initialised to 0
+    cout << PAIR1.first; 
+   
+    // it is initialised to 0
+    cout << PAIR1.second; 
+ 
+    cout << " ";
+ 
+    // // it prints nothing i.e NULL
+    cout << PAIR2.first; 
+     
+    // it prints nothing i.e NULL
+    cout << PAIR2.second; 
+ 
+    return 0;
+}
+```
+
+```cpp
+// CPP Program to demonstrate make_pair()
+// function in pair
+#include <iostream>
+#include <utility>
+using namespace std;
+
+// Driver Code
+int main()
+{
+	pair<int, char> PAIR1;
+	pair<string, double> PAIR2("GeeksForGeeks", 1.23);
+	pair<string, double> PAIR3;
+
+	PAIR1.first = 100;
+	PAIR1.second = 'G';
+
+	PAIR3 = make_pair("GeeksForGeeks is Best", 4.56);
+
+	cout << PAIR1.first << " ";
+	cout << PAIR1.second << endl;
+
+	cout << PAIR2.first << " ";
+	cout << PAIR2.second << endl;
+
+	cout << PAIR3.first << " ";
+	cout << PAIR3.second << endl;
+
+	return 0;
+}
+```
+
+```cpp
+// CPP Program to demonstrate swap()
+// function in pair
+#include <iostream>
+#include <utility>
+
+using namespace std;
+
+// Driver Code
+int main()
+{
+	pair<char, int> pair1 = make_pair('A', 1);
+	pair<char, int> pair2 = make_pair('B', 2);
+
+	cout << "Before swapping:\n ";
+	cout << "Contents of pair1 = " << pair1.first << " "
+		<< pair1.second;
+	cout << "Contents of pair2 = " << pair2.first << " "
+		<< pair2.second;
+	pair1.swap(pair2);
+
+	cout << "\nAfter swapping:\n ";
+	cout << "Contents of pair1 = " << pair1.first << " "
+		<< pair1.second;
+	cout << "Contents of pair2 = " << pair2.first << " "
+		<< pair2.second;
+
+	return 0;
+}
+
+```
 
 # References
 
@@ -396,4 +682,13 @@ Một số hàm thuật toán
 - [Operators](https://www.programiz.com/cpp-programming/operators)
 - [Function](https://www.geeksforgeeks.org/functions-in-cpp/)
 - [Algorithm](https://www.geeksforgeeks.org/c-magicians-stl-algorithms/)
+- [Algorithms](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/amp/)
 - [STL](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/amp/)
+- [Vector](https://www.geeksforgeeks.org/vector-in-cpp-stl/)
+- [Map](https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/)
+- [Set](https://www.geeksforgeeks.org/set-in-cpp-stl/)
+- [SetDataStructure](https://www.geeksforgeeks.org/introduction-to-set-data-structure-and-algorithm-tutorials/)
+- [Stack](https://www.geeksforgeeks.org/stack-in-cpp-stl/)
+- [Queue](https://www.geeksforgeeks.org/queue-cpp-stl/)
+- [Struct](https://www.geeksforgeeks.org/structures-in-cpp/)
+- [Pair](https://www.geeksforgeeks.org/pair-in-cpp-stl/)
