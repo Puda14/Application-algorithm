@@ -18,13 +18,13 @@ Phép toán mở rộng:
 ![PNG Image](image/P.png)
 
 Ví dụ:
-Cho $a = 10^{18}$, $b = 10^{18}$, $c = 10^{9}+7$. Cần tính $(a*b)\%c$
+Cho $a = 10^{18}$, $b = 10^{18}$, $c = 10^{9}+7$. Cần tính $(a*b)$%$c$
 
 Khi nhân a và b kết quả sẽ ra $10^{36}$, rất lớn và không thể lưu trữ ở dạng dữ liệu chuẩn mà ngôn ngữ lập trình cung cấp.
 
 Để tránh điều đó xảy ra chúng ta cần xử lý như sau:
 
-$(a*b)\%c$ = $((a\%c)*(b\%c))\%c$
+`(a*b)%c` = `((a%c)*(b%c))%c`
 
 # Modular exponentiation
 
@@ -97,7 +97,7 @@ int binaryExponentiation(int x,int n)
 
 Vấn đề  đầu ra rất lớn: Thuật toán có thể vẫn được chạy bình thường nhưng đưa ra giá trị rác.
 
-Đề bài có thể ra thêm phần chia dư. Ví dụ như tìm $x^n \% M$
+Đề bài có thể ra thêm phần chia dư. Ví dụ như tìm $x^n$%$M$
 
 Recursive version
 
@@ -163,7 +163,7 @@ int GCD(int A, int B) {
 
 ## Euclid's algorithm
 
-$GCD(A,B) = GCD(B,A\%B)$, lặp đến khi $A\%B=0$.
+`GCD(A,B) = GCD(B,A%B)`, lặp đến khi `A%B=0`.
 ```cpp
 int GCD(int A, int B) {
     if(B==0)
